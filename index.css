@@ -1,0 +1,334 @@
+@font-face {
+  font-family: PINGFANG;
+  src: url(./assets/ttf/苹方黑体-准-简.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: PINGFANG;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+}
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide {
+  /*background: black;*/
+  overflow: hidden;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /*height: 100%;*/
+  object-fit: contain;
+  box-shadow: 0 0 20px 3px #676767;
+}
+.mySwiper {
+  display: none;
+}
+.swiper-zoom-container {
+  padding-bottom: 40px;
+}
+.start-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  background: #0d3771;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+.start-page img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.start-page.transition {
+  opacity: 0;
+}
+.start-page.hidden {
+  z-index: 0;
+  display: none;
+}
+.before-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  background: #4ca1d7;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+.before-page img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.before-page.transition {
+  opacity: 0;
+}
+.before-page.hidden {
+  z-index: 0;
+  display: none;
+}
+#swiper {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+  z-index: 5;
+  display: none;
+}
+.goBackContainer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 100;
+}
+#swiper span.goBack {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  color: #fff;
+  box-shadow: 0 0 10px 1px #76a4e7;
+  font-size: 0;
+  border-radius: 50%;
+  background: #4ca1d7;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#swiper span.goPrev,
+#swiper span.goNext {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  color: #fff;
+  box-shadow: 0 0 10px 1px #76a4e7;
+  font-size: 0;
+  border-radius: 50%;
+  background: #4ca1d7;
+  justify-content: center;
+  align-items: center;
+}
+#swiper span.goBack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+}
+#list {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+#list .left-bg {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 25vw;
+  opacity: 0.15;
+}
+#list .right-bg {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 25vw;
+  opacity: 0.15;
+}
+#list .bottom-text {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff000;
+  font-weight: bold;
+  text-shadow: 0 0 7px black;
+  font-size: 12px;
+  transform: scale(0.9);
+}
+#list .bottom-text span.en {
+  transform: scale(0.7);
+  display: inline-block;
+}
+#list .inner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  z-index: 2;
+  flex: 1;
+}
+#column-inner {
+  flex: 1;
+  overflow: auto;
+}
+#list .inner p {
+  color: #000;
+}
+#list .inner .main {
+  /*text-align: center;*/
+  /*font-size: 26px;*/
+  /*padding: 18px;*/
+  /*background: #f5f5f5;*/
+  /*border-bottom: 1px solid #eee;*/
+  /*font-weight: bold;*/
+  text-align: center;
+  font-size: 26px;
+  padding: 12px;
+  background: #4d99cd;
+  /*border-bottom: 1px solid #eee;*/
+  font-weight: bold;
+  color: #fff;
+}
+#list .inner .title {
+  font-size: 20px;
+  display: flex;
+  padding: 12px 12px;
+  line-height: 22px;
+  /*background: #f1f1f1;*/
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-weight: bold;
+  /*border-bottom: 1px solid #e3e3e3;*/
+  background: #4ca1d7;
+  color: #fff;
+}
+#list .inner .title img {
+  width: 54px;
+  height: 54px;
+  border-radius: 6px;
+  margin-right: 8px;
+  /*border: 1px solid #fff;*/
+  box-shadow: 0 0 10px 1px #91beff;
+}
+#list .inner .title .etc {
+  display: inline-block;
+}
+#list .inner .column-title {
+  font-size: 16px;
+  padding: 12px 12px;
+  line-height: 22px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-weight: bold;
+  /*background: #f8f8f8;*/
+  border-bottom: 1px solid #eee;
+  background: #4ca1d7;
+  color: #fff;
+}
+#list .inner .column-title img {
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  margin-right: 8px;
+  /*border: 1px solid #fff;*/
+  box-shadow: 0 0 10px 1px #91beff;
+}
+#list .inner .column-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 超出部分省略号 */
+  word-break: break-all;
+  /* break-all(允许在单词内换行。) */
+  display: -webkit-box;
+  /* 对象作为伸缩盒子模型显示 */
+  -webkit-box-orient: vertical;
+  /* 设置或检索伸缩盒对象的子元素的排列方式 */
+  -webkit-line-clamp: 2;
+  /* 显示的行数 */
+}
+#list .inner .column-title span span {
+  display: block;
+  text-align: right;
+  margin-right: 4px;
+  margin-top: 4px;
+}
+#list .inner .column-item {
+  font-size: 16px;
+  padding: 6px 12px;
+  line-height: 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  transition: all 0.1s;
+}
+#list .inner .column-item:hover {
+  background: #f2f2f2;
+}
+#list .inner .column-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 超出部分省略号 */
+  word-break: break-all;
+  /* break-all(允许在单词内换行。) */
+  display: -webkit-box;
+  /* 对象作为伸缩盒子模型显示 */
+  -webkit-box-orient: vertical;
+  /* 设置或检索伸缩盒对象的子元素的排列方式 */
+  -webkit-line-clamp: 2;
+  /* 显示的行数 */
+}
+#list .inner .column-item img {
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  margin-right: 8px;
+  box-shadow: 0 0 10px 1px #acccf9;
+}
+.etc {
+  flex: 1;
+  display: block;
+  height: 1px;
+  border-top: 4px dotted #fff;
+  margin: 0 8px;
+  position: relative;
+  top: 10px;
+}
